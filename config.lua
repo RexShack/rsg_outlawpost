@@ -1,5 +1,8 @@
 Config = {}
 
+Config.GoldBarPrice = 800
+Config.BloodMoneyPrice = 100
+
 Config.Mission1Npcs = {
 	[1] = { ["Model"] = "G_M_O_UniExConfeds_01", ["Pos"] = vector3(1931.4353, 1949.5598, 265.98077 -1), ["Heading"] = 359.69161 },
 	[2] = { ["Model"] = "G_M_Y_UniExConfeds_01", ["Pos"] = vector3(1930.9908, 1945.5352, 273.34613 -1), ["Heading"] = 103.16332 },

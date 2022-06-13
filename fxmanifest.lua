@@ -11,18 +11,20 @@ client_scripts {
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
 	'client/client.lua',
-    'config.lua',
 }
 
 server_scripts {
 	'server/server.lua'
 }
 
+shared_scripts {
+	'config.lua',
+}
+
 dependencies {
 	'qbr-core', -- https://github.com/qbcore-redm-framework
 	'qbr-menu', -- https://github.com/qbcore-redm-framework/qbr-menu
 	'qbr-input', -- https://github.com/qbcore-redm-framework/qbr-input
-	'rsg_alerts', -- https://github.com/RexShack/rsg_alerts
 	'PolyZone', -- https://github.com/mkafrin/PolyZone
 }
 

@@ -84,7 +84,16 @@ RegisterNetEvent('rsg_outlaws:cient:openMenu', function(data)
             header = "Blood Money Wash",
             txt = "wash the blood off your money",
             params = {
-                event = 'rsg_outlaws:client:washmoney',
+                event = 'rsg_outlaws:client:sellbloodmoney',
+				isServer = false,
+				args = {}
+            }
+        },
+        {
+            header = "Sell Gold Bars",
+            txt = "sell your gold bars here",
+            params = {
+                event = 'rsg_outlaws:client:sellgoldbars',
 				isServer = false,
 				args = {}
             }
@@ -115,11 +124,30 @@ AddEventHandler('rsg_outlaws:client:washmoney', function()
     })
     if moneywash ~= nil then
         for k,v in pairs(moneywash) do
-            --print(k .. " : " .. v)
-			--print(v)
 			TriggerServerEvent('rsg_outlaws:server:washmoney', v)
         end
     end
 end)
 
 --------------------------------------------------------------------------------------------------------------------
+
+-- sell gold bars
+RegisterNetEvent('rsg_outlaws:client:sellgoldbars')
+AddEventHandler('rsg_outlaws:client:sellgoldbars', function()
+    local goldbars = exports['qbr-input']:ShowInput({
+        header = "Gold Bars",
+		inputs = {
+            {
+                text = "Amount of Bars",
+                input = "amount",
+                type = "number",
+                isRequired = true
+            },
+		}
+    })
+    if goldbars ~= nil then
+        for k,v in pairs(goldbars) do
+			TriggerServerEvent('rsg_outlaws:server:sellgoldbars', v)
+        end
+    end
+end)
