@@ -109,8 +109,8 @@ RegisterNetEvent('rsg_outlaws:cient:openMenu', function(data)
 end)
 
 -- wash blood money
-RegisterNetEvent('rsg_outlaws:server:sellbloodmoney')
-AddEventHandler('rsg_outlaws:server:sellbloodmoney', function()
+RegisterNetEvent('rsg_outlaws:client:sellbloodmoney')
+AddEventHandler('rsg_outlaws:client:sellbloodmoney', function()
     local moneywash = exports['qbr-input']:ShowInput({
         header = "Money Wash",
 		inputs = {
